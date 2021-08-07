@@ -23,10 +23,10 @@
     },
     "homepage": "https://github.com/MohRaouf/FoodCourt#readme",
     "dependencies": {
-        "@typegoose/auto-increment": "^0.6.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "mongoose": "^5.13.5",
+        "mongoose-sequence": "^5.3.1",
         "nodemon": "^2.0.12"
     }
 }

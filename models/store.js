@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
-const { AutoIncrementSimple } = require("@typegoose/auto-increment");
+const AutoIncrement = require('mongoose-sequence')(mongoose.connection);
 
 const storeSchema = new mongoose.Schema({
     storeID: {
         type: Number,
-        required: true,
-        unique: true
+        unique: true,
     },
     storeName: {
         type: String,
@@ -20,6 +19,6 @@ const storeSchema = new mongoose.Schema({
         required: true,
     },
 });
-
-storeSchema.plugin(AutoIncrementSimple, [{ field: 'storeID' }]);
-exports = mongoose.model("Store", storeSchema);
+storeSchema.index({ storeName: 1 }, { unique: true });
+storeSchema.plugin(AutoIncrement, { inc_field: 'storeID' });
+module.exports = mongoose.model("Store", storeSchema);
