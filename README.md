@@ -1,6 +1,8 @@
 # Food Court Stores API
 Simple RESTful API serves the Food Courts application, to store the food court stores in the Database and give the ability to perform the CRUD operations on the stores through RESTful API.
 
+- Deployed on [Heroku](https://food-court-stores.herokuapp.com)
+
 ## Database
 - MongoDB deployed on cloud.mongodb
 
